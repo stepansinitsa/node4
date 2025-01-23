@@ -2,8 +2,7 @@ const express = require("express");
 const { v4: uuid } = require("uuid");
 
 class Book {
-  constructor(title = "", description = "", authors = "", favorite = "", fileCover = "", fileName = "", id = uuid()) 
-  {
+  constructor(title = "", description = "", authors = "", favorite = "", fileCover = "", fileName = "", id = uuid()) {
     this.title = title,
     this.description = description,
     this.authors = authors,
