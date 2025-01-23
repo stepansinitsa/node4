@@ -2,32 +2,25 @@ const express = require("express");
 const { v4: uuid } = require("uuid");
 
 class Book {
-  constructor(
-    title = "",
-    description = "",
-    authors = "",
-    favorite = "",
-    fileCover = "",
-    fileName = "",
-    id = uuid()
-  ) {
-      (this.title = title),
-      (this.description = description),
-      (this.authors = authors),
-      (this.favorite = favorite),
-      (this.fileCover = fileCover),
-      (this.fileName = fileName),
-      (this.id = id)
+  constructor(title = "", description = "", authors = "", favorite = "", fileCover = "", fileName = "", id = uuid()) 
+  {
+    this.title = title,
+    this.description = description,
+    this.authors = authors,
+    this.favorite = favorite,
+    this.fileCover = fileCover,
+    this.fileName = fileName,
+    this.id = id
   }
 };
 
 const auth = {
   id: 1,
-  mail: "test@mail.ru",
+  mail: "test@mail.ru"
 };
 
 const lib = {
-  books: [],
+  books: []
 };
 
 const app = express();
@@ -64,14 +57,7 @@ app.post("/api/books", (req, res) => {
   const { books } = lib;
   const { title, description, authors, favorite, fileCover, fileName } = req.body;
 
-  const newBook = new Book(
-    title,
-    description,
-    authors,
-    favorite,
-    fileCover,
-    fileName
-  );
+  const newBook = new Book(title, description, authors, favorite, fileCover, fileName);
   books.push(newBook);
 
   res.status(201);
