@@ -114,7 +114,7 @@ app.delete("/api/books/:id", (req, res) => {
     res.json("ok");
   } else {
     res.status(404);
-    res.json("404 | страница не найдена");
+    res.json("Code: 404");
   }
 });
 
